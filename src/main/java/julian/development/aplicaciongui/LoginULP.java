@@ -24,14 +24,13 @@ public class LoginULP extends javax.swing.JFrame {
 
     public LoginULP() {
         initComponents();
-        
+
         setTitle("Formulario de Registro");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 600);
         setLocationRelativeTo(null);
-        
-     
 
+        
         JLabel labelCorreo = new JLabel("Correo:");
         fieldCorreo = new JTextField();
         JLabel labelPass = new JLabel("Contraseña:");
@@ -39,23 +38,18 @@ public class LoginULP extends javax.swing.JFrame {
         fieldPass.setEchoChar('*');
         botonRegistrar = new JButton("Registrar");
 
-
-
-        botonRegistrar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String correo = fieldCorreo.getText();
-                String pass = new String(fieldPass.getPassword());
-
-                if (correo.equals("alumno@ulp.edu.ar") && pass.equals("12345678")) {
-                    JOptionPane.showMessageDialog(LoginULP.this, "¡Bienvenido!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(LoginULP.this, "Usuario y/o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+        botonRegistrar.addActionListener((ActionEvent e) -> {
+            String correo = fieldCorreo.getText();
+            String pass = new String(fieldPass.getPassword());
+            
+            if (correo.equals("alumno@ulp.edu.ar") && pass.equals("12345678")) {
+                JOptionPane.showMessageDialog(LoginULP.this, "¡Bienvenido!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(LoginULP.this, "Usuario y/o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 
-      
+        
 
     }
 
@@ -158,12 +152,7 @@ public class LoginULP extends javax.swing.JFrame {
                     break;
                 }
             }
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new LoginULP();
-                }
-            });
+            SwingUtilities.invokeLater(LoginULP::new);
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(LoginULP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -173,13 +162,9 @@ public class LoginULP extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginULP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-       
 
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginULP().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new LoginULP().setVisible(true);
         });
     }
 
