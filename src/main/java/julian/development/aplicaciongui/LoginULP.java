@@ -144,9 +144,9 @@ public class LoginULP extends javax.swing.JFrame {
         String pass = jtPass.getText();
 
         if (correo.equals("alumno@ulp.edu.ar") && pass.equals("12345678")) {
-            JOptionPane.showMessageDialog(LoginULP.this, "¡Bienvenido!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(LoginULP.this, "¡Bienvenido!", "Registro Exitoso!", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(LoginULP.this, "Usuario y/o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(LoginULP.this, "Usuario y/o contraseña incorrectos", "Error!!", JOptionPane.ERROR_MESSAGE);
         }
         limpiar();
     
