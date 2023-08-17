@@ -21,12 +21,13 @@ public class LoginULP extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtPass = new javax.swing.JTextField();
         registar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtMail = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jtPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +53,15 @@ public class LoginULP extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel2.setText("by Julian Rios 2023");
 
+        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\NetBeans16\\AplicacionGUI\\src\\main\\java\\julian\\development\\aplicaciongui\\Source\\lapunta.png")); // NOI18N
+
+        jtPass.setText("jPasswordField1");
+        jtPass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtPassFocusGained(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -64,36 +74,39 @@ public class LoginULP extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(180, 180, 180))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(jLabel7))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel7)))
+                                .addGap(179, 179, 179)
+                                .addComponent(jLabel2)))
                         .addGap(0, 58, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(jLabel3)
+                .addGap(80, 80, 80)
+                .addComponent(jLabel5)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(25, 25, 25))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(registar)
-                        .addGap(171, 171, 171))
+                        .addComponent(jtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(108, 108, 108))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108))))
+                        .addComponent(registar)
+                        .addGap(171, 171, 171))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,21 +116,23 @@ public class LoginULP extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtPass)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
+                .addComponent(registar)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registar)
-                .addGap(36, 36, 36)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(20, 20, 20))
+                .addGap(13, 13, 13))
         );
 
         pack();
@@ -133,9 +148,18 @@ public class LoginULP extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(LoginULP.this, "Usuario y/o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        limpiar();
     
 
     }//GEN-LAST:event_registarActionPerformed
+
+    private void limpiar(){
+        jtPass.setText("");
+        jtMail.setText("");
+    }
+    private void jtPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtPassFocusGained
+        jtPass.setText("");
+    }//GEN-LAST:event_jtPassFocusGained
 
     public static void main(String args[]) {
 
@@ -179,10 +203,11 @@ public class LoginULP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jtMail;
-    private javax.swing.JTextField jtPass;
+    private javax.swing.JPasswordField jtPass;
     private javax.swing.JButton registar;
     // End of variables declaration//GEN-END:variables
 }
